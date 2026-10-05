@@ -120,3 +120,51 @@ legitimate vehicle-related spending.
 This highlights an important limitation of Moving Average forecasting: it can adapt to recent historical spending patterns, but it cannot anticipate unexpected large expenses that are not reflected in the preceding months.
 
 These results will later be compared with Exponential Smoothing to determine which forecasting approach provides more accurate budget predictions.
+
+## Simple Exponential Smoothing Experiment
+
+### Method
+
+The second forecasting method evaluated was Simple Exponential Smoothing (SES). Unlike the Moving Average method, which calculates predictions using a fixed window of previous observations, Exponential Smoothing assigns greater weight to more recent observations.
+
+The smoothing parameter, alpha, determines how strongly the forecast responds to recent spending. Rather than selecting an alpha value arbitrarily, alpha values from 0.1 through 0.9 were evaluated using the same validation period used for the Moving Average experiment.
+
+### Alpha Validation Results
+
+| Alpha | Validation MAE (INR) | Validation RMSE (INR) |
+|------:|---------------------:|----------------------:|
+| 0.1 | 31,232.10 | 37,832.65 |
+| 0.2 | 27,361.42 | 34,706.09 |
+| 0.3 | 25,756.74 | 33,114.68 |
+| 0.4 | 25,271.46 | 32,561.64 |
+| 0.5 | 25,163.66 | 32,439.73 |
+| 0.6 | 25,218.01 | 32,501.16 |
+| 0.7 | 25,376.31 | 32,680.56 |
+| 0.8 | 25,650.85 | 32,993.42 |
+| 0.9 | 26,083.87 | 33,491.24 |
+
+Alpha = 0.5 produced the lowest validation MAE and RMSE and was therefore selected for the test evaluation.
+
+### Rolling Test Evaluation
+
+To make the comparison with Moving Average consistent, SES was evaluated using rolling one-step-ahead predictions. Each month was predicted using only information available before that month. After the actual spending for that month became available, it was added to the historical data before predicting the following month.
+
+The selected SES model produced:
+
+- Test MAE: 26,702.76 INR
+- Test RMSE: 35,622.49 INR
+
+## Preliminary Forecasting Comparison
+
+| Method | Test MAE (INR) | Test RMSE (INR) |
+|---|---:|---:|
+| 6-Month Moving Average | 24,013.52 | 31,665.27 |
+| Simple Exponential Smoothing (alpha = 0.5) | 26,702.76 | 35,622.49 |
+
+Based on both evaluation metrics, the 6-month Moving Average performed better than Simple Exponential Smoothing on the current test period.
+
+One important observation was the effect of irregular spending on the forecasts. January 2018 had actual spending of 112,080.90 INR, while SES predicted 44,419.04 INR. After observing this unusually high month, the SES prediction for February increased to 78,249.97 INR, while actual February spending fell to 16,218 INR.
+
+This suggests that although Exponential Smoothing can respond more quickly to recent spending changes, this responsiveness can also reduce forecasting accuracy when a recent observation represents an unusual expense rather than a continuing change in spending behavior. In comparison, the 6-month Moving Average smooths changes across a longer period, which performed better on this dataset.
+
+These findings are preliminary and are specific to the dataset and evaluation period used in this project.
