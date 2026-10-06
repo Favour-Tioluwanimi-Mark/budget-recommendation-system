@@ -1,0 +1,109 @@
+Category,Subcategory,Transaction_Count,Total_Amount
+Apparel,Clothing,14,15608.0
+Apparel,Footwear,11,7552.82
+Apparel,Laundry,20,1515.0
+Apparel,Accessories,1,450.0
+Apparel,,1,248.0
+Beauty,Makeup,1,2000.0
+Beauty,grooming,18,1999.0
+Beauty,,2,110.0
+Beauty,Accessories,1,80.0
+Cook,,4,12443.0
+Culture,Movie,9,4164.36
+Culture,Books,1,100.0
+Culture,,1,40.0
+Documents,Courier,1,50.0
+Documents,Updation,1,50.0
+Education,Stationary,17,517.0
+Education,School supplies,1,20.0
+Family,Pocket money,49,58195.0
+Family,clothes,8,12362.0
+Family,misc,7,3989.0
+Family,exam fee,2,1655.0
+Family,gift,2,1556.2
+Family,makeup,1,525.0
+Family,medicine,2,300.0
+Festivals,Diwali,8,3279.0
+Festivals,Navratri,3,2000.0
+Festivals,Rakshabandhan,2,1000.0
+Festivals,Ganesh Pujan,2,612.0
+Festivals,Holi,1,20.0
+Food,Dinner,55,22903.1
+Food,Grocery,113,17983.8
+Food,Lunch,68,11390.45
+Food,Milk,162,9047.0
+Food,,85,8286.0
+Food,snacks,115,5980.75
+Food,fruits,28,4520.0
+Food,Eating out,8,2868.0
+Food,flour mill,20,2007.0
+Food,Ice cream,36,1840.0
+Food,vegetables,25,1693.0
+Food,Sweets,5,1432.0
+Food,beverage,27,1256.0
+Food,Eggs,27,1231.0
+Food,breakfast,29,1127.0
+Food,Tea,43,848.0
+Food,Bread,16,579.0
+Food,Biscuits,12,475.0
+Food,Water,4,205.0
+Food,Rajgira ladu,7,190.0
+Food,Onions,6,176.0
+Food,curd,7,170.0
+Food,chocolate,5,102.0
+Food,Potato,4,93.0
+Gift,,30,40168.0
+Grooming,Saloon,4,400.0
+Health,Health,16,31497.75
+Health,Hospital,14,20940.0
+Health,Medicine,61,11175.0
+Health,Lab Tests,3,2640.0
+Household,Appliances,29,82081.0
+Household,Kirana,83,39147.58
+Household,Kitchen,23,16349.0
+Household,Hardware,14,9606.0
+Household,home decor,4,6846.0
+Household,Furniture,3,3469.0
+Household,Toiletries,14,2254.0
+Household,,3,1094.0
+Household,gadgets,3,799.0
+Investment,Public Provident Fund,12,150000.0
+Investment,Mutual fund,66,66000.0
+Investment,LIC,3,33858.0
+Investment,RD,22,22000.0
+Money transfer,,28,402023.0
+Money transfer,Home,15,204505.9
+Other,,114,87025.28
+Public Provident Fund,,8,90000.0
+Recurring Deposit,,22,22000.0
+Rent,,4,10709.0
+Self-development,,2,2357.0
+Social Life,Leisure,1,298.0
+Tourism,Trip,4,63300.0
+Tourism,Entry Fees,1,308.85
+Transportation,Bike,12,94593.0
+Transportation,Travels,19,32338.98
+Transportation,Taxi,19,16140.0
+Transportation,train,19,11410.8
+Transportation,auto,142,5880.0
+Transportation,Bus,15,3228.0
+Transportation,,24,3115.0
+Transportation,Train,55,1650.0
+Transportation,Petrol,1,360.0
+Transportation,ropeway,1,338.0
+garbage disposal,,2,67.0
+maid,,17,21839.0
+subscription,Edtech Course,14,63733.42
+subscription,Mobile Service Provider,66,26650.0
+subscription,Wifi Internet Service,2,8460.0
+subscription,Tata Sky,24,4066.0
+subscription,Newspaper,9,3101.0
+subscription,Mahanagar Gas,5,2208.0
+subscription,Netflix,8,1492.0
+subscription,Amazon Prime,2,1477.0
+subscription,Hotstar,3,1243.49
+subscription,Cable TV,3,783.0
+subscription,Kindle unlimited,4,676.0
+subscription,Audible,2,398.0
+subscription,OTT Platform,1,300.0
+water (jar /tanker),,3,148.0
