@@ -30,28 +30,79 @@ print("Test months:", len(test))
 
 alpha_values = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 
+# results = []
+
+# for alpha in alpha_values:
+
+#     model = SimpleExpSmoothing(
+#         training["Amount"],
+#         initialization_method="estimated"
+#     ).fit(
+#         smoothing_level=alpha,
+#         optimized=False
+#     )
+
+#     predictions = model.forecast(len(validation))
+
+#     mae = mean_absolute_error(
+#         validation["Amount"],
+#         predictions
+#     )
+
+#     rmse = root_mean_squared_error(
+#         validation["Amount"],
+#         predictions
+#     )
+
+#     results.append({
+#         "Alpha": alpha,
+#         "MAE": mae,
+#         "RMSE": rmse
+#     })
+
+# results_df = pd.DataFrame(results)
+
+# print("\nExponential Smoothing Validation Results:")
+# print(results_df)
+
+# # Select the best alpha based on validation performance
+# best_alpha = 0.5
+
 results = []
 
 for alpha in alpha_values:
 
-    model = SimpleExpSmoothing(
-        training["Amount"],
-        initialization_method="estimated"
-    ).fit(
-        smoothing_level=alpha,
-        optimized=False
-    )
+    # Start with only the training data
+    history = training["Amount"].tolist()
 
-    predictions = model.forecast(len(validation))
+    validation_predictions = []
+
+    # Predict each validation month one at a time
+    for actual in validation["Amount"]:
+
+        model = SimpleExpSmoothing(
+            history,
+            initialization_method="estimated"
+        ).fit(
+            smoothing_level=alpha,
+            optimized=False
+        )
+
+        # Predict the next month
+        prediction = model.forecast(1)[0]
+        validation_predictions.append(prediction)
+
+        # After the month occurs, add the actual value to history
+        history.append(actual)
 
     mae = mean_absolute_error(
         validation["Amount"],
-        predictions
+        validation_predictions
     )
 
     rmse = root_mean_squared_error(
         validation["Amount"],
-        predictions
+        validation_predictions
     )
 
     results.append({
@@ -62,12 +113,14 @@ for alpha in alpha_values:
 
 results_df = pd.DataFrame(results)
 
-print("\nExponential Smoothing Validation Results:")
+print("\nRolling Exponential Smoothing Validation Results:")
 print(results_df)
 
-# Select the best alpha based on validation performance
-best_alpha = 0.5
-
+# Select the alpha with the lowest validation MAE
+best_alpha = results_df.loc[
+    results_df["MAE"].idxmin(),
+    "Alpha"
+]
 
 history = monthly_spending[
     monthly_spending["Month"] < "2018-01-01"
