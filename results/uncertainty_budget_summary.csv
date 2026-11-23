@@ -1,0 +1,4 @@
+Method,Months,Average_Savings,Average_Overrun,Months_With_Overrun
+50/30/20,8,19490.897499999995,0.0,0
+MA + Buffer,8,41584.111770833326,5084.8407291666645,1
+Original MA,8,55891.45125,7877.054374999999,1
